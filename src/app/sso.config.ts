@@ -20,4 +20,6 @@ export const authConfig: AuthConfig = {
   scope: 'openid profile email',
   showDebugInformation: true,
 
+  //test
+
 }
