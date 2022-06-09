@@ -30,6 +30,7 @@ export class AppComponent {
 
   get token(){
     let claims:any = this.oauthService.getIdentityClaims();
+    console.log(this.oauthService.getAccessToken());
     return claims ? claims : null;
   }
 }
