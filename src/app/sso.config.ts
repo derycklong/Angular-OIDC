@@ -3,14 +3,17 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const authConfig: AuthConfig = {
 
   // Url of the Identity Provider
-  issuer: 'https://mlaptest.onelogin.com/oidc/2',
+  //issuer: 'https://mlaptest.onelogin.com/oidc/2',
+  issuer: 'https://trial-5407796.okta.com',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: window.location.origin + '/index.html',
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
-  clientId: '6736efb0-c969-013a-28d5-06ab6d545a9f210819',
-  dummyClientSecret: '9cbe7d5ceda2f5bc4200b5da38ef0b51f04f2b1ab07c453ab3f3e6e8debc1b3b',
+  //clientId: '6736efb0-c969-013a-28d5-06ab6d545a9f210819',
+  //dummyClientSecret: '9cbe7d5ceda2f5bc4200b5da38ef0b51f04f2b1ab07c453ab3f3e6e8debc1b3b',
+  clientId: '0oa1h4hc6oTQHIVjU697',
+  dummyClientSecret: '6Y9M0AuLEYXvsnNOcde_8qKEuFxVbzfg-9fllFgP',
 
   requestAccessToken: true,
   oidc: true,

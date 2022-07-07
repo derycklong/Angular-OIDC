@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { OAuthService, JwksValidationHandler } from 'angular-oauth2-oidc';
 import { authConfig } from './sso.config';
 import { filter } from 'minimatch';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { filter } from 'minimatch';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  name= "";
+  email= "";
 
   constructor(private oauthService:OAuthService){
     this.configureSingleSignOn();
@@ -31,6 +34,15 @@ export class AppComponent {
   get token(){
     let claims:any = this.oauthService.getIdentityClaims();
     console.log(this.oauthService.getAccessToken());
+    console.log(claims['name']);
+    console.log(claims['email']);
+    console.log(claims)
+
+    this.name = claims['name'];
+    this.email = claims['email'];
+
+    //this.oauthService.load
+    //console.log(this.oauthService.loadUserProfile());
     return claims ? claims : null;
   }
 }

@@ -1,6 +1,8 @@
-<div style="margin: 5em;">
-<button (click)="login()">Login</button>
-<button (click)="logout()">Logout</button>
+<h2>This is a just a test page to simulate login using Okta workforce Identity (SSO)</h2>
+<div style="margin: 2em;">
+<button *ngIf="!name" (click)="login()">Login</button>
+<button *ngIf="name" (click)="logout()">Logout</button>
 </div>
+<h1 *ngIf="name">Welcome {{name}}({{email}}) to the application !</h1>
 
 <router-outlet *ngIf="token"></router-outlet>
